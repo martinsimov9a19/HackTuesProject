@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 408, y: 221}
   m_MaxSize: {x: 8008, y: 4021}
   vertical: 0
-  controlID: 133
+  controlID: 107
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -113,8 +113,8 @@ MonoBehaviour:
     y: 0
     width: 277
     height: 635
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -408,19 +408,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 36
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 36
-  m_LastProjectPath: C:\Users\marti\Desktop\asdf\HackTuesProject\HackTuesProject
+  m_LastProjectPath: C:\Users\marti\Desktop\New folder\HackTuesProject
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: dc270000
-    m_LastClickedID: 10204
-    m_ExpandedIDs: 00000000dc27000000ca9a3bffffff7f
+    m_SelectedIDs: 642d0000
+    m_LastClickedID: 11620
+    m_ExpandedIDs: 00000000b02a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -448,7 +448,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000dc270000
+    m_ExpandedIDs: 00000000b02a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 00000000ba2b0000fc2b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -568,18 +568,18 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 62d0f1ff2cd1f1ffaad2f1ff828bffff80fbffffa0fbffff000000006c2b0000
+    m_ExpandedIDs: e416ffffa417ffff1419ffff46e7ffffcae9ffff68ecffff9eefffff22fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Center Point
-      m_OriginalName: Center Point
+      m_Name: Button (1)
+      m_OriginalName: Button (1)
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 11080
+      m_UserData: -5016
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -619,14 +619,14 @@ MonoBehaviour:
     height: 341
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 4423.764772458351
+  lastFramingTime: 334.1697230047557
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 224.17041, y: 51.500267, z: 238.83286}
+    m_Target: {x: 235.5, y: 62, z: 0}
     speed: 2
-    m_Value: {x: 224.17041, y: 51.500267, z: 238.83286}
+    m_Value: {x: 235.5, y: 62, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -652,11 +652,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.10587053, y: 0.24640378, z: 0.027089579, w: 0.9629864}
     speed: 2
-    m_Value: {x: -0.10587053, y: 0.24640378, z: 0.027089579, w: 0.9629864}
+    m_Value: {x: 0.10587054, y: -0.2464038, z: -0.02708958, w: -0.96298647}
   m_Size:
-    m_Target: 5.1744857
+    m_Target: 268.60056
     speed: 2
-    m_Value: 5.1744857
+    m_Value: 268.60056
   m_Ortho:
     m_Target: 0
     speed: 2
