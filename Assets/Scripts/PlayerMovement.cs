@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
+using UnityEngine.UI;
 
 
 public class PlayerMovement : MonoBehaviour {
@@ -13,6 +13,12 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 moveDirection = Vector3.zero;
     CharacterController controller;
 
+    public Canvas GUICanvas;
+
+    public Text text;
+
+    string[] Questions = { "haha", "ha", "lel", "lul", "lel", "pls" };
+    string[] UnanswerdQuestions = { };
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -34,6 +40,7 @@ public class PlayerMovement : MonoBehaviour {
         if (controller.enabled == true)
         {
             controller.Move(moveDirection * Time.deltaTime);
+     
         }
 
     }
@@ -45,7 +52,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             controller.enabled = false;
             rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
-
+            GUICanvas.enabled = true;
+            int randomIndex = Random.Range(0, 5);
+            text.text = Questions[randomIndex];
+            
         }
     }
 }
