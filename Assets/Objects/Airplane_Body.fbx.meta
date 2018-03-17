@@ -1,10 +1,44 @@
 fileFormatVersion: 2
-guid: 251b93405cca72c4781b5eaa2fc8bf4d
-timeCreated: 1521289199
+guid: 2e614447d172ef84bb1388df5536b008
+timeCreated: 1521321770
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: Aiplane_Body
+    100002: //RootNode
+    100004: Airplane_wing:Engine
+    100006: Airplane_wing:pCube1
+    100008: Airplane_wing:Wing
+    100010: Wing
+    400000: Aiplane_Body
+    400002: //RootNode
+    400004: Airplane_wing:Engine
+    400006: Airplane_wing:pCube1
+    400008: Airplane_wing:Wing
+    400010: Wing
+    2100000: metalic
+    2100002: red
+    2100004: black
+    2100006: Window
+    2100008: Airplane_wing_black
+    2100010: Airplane_wing_lambert5
+    2100012: Airplane_wing_fins
+    2100014: Airplane_wing_red
+    2100016: lambert1
+    2300000: Aiplane_Body
+    2300002: Airplane_wing:Engine
+    2300004: Airplane_wing:pCube1
+    2300006: Airplane_wing:Wing
+    3300000: Aiplane_Body
+    3300002: Airplane_wing:Engine
+    3300004: Airplane_wing:pCube1
+    3300006: Airplane_wing:Wing
+    4300000: Aiplane_Body
+    4300002: Airplane_wing:Engine
+    4300004: Airplane_wing:Wing
+    4300006: Airplane_wing:pCube1
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1

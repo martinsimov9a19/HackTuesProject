@@ -1,10 +1,33 @@
 fileFormatVersion: 2
-guid: 87183da5bdde0bb4680191a007b967ac
-timeCreated: 1521301263
+guid: a420777de488afc45a95770c9856038c
+timeCreated: 1521322040
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Engine
+    100004: pCube1
+    100006: Wing
+    400000: //RootNode
+    400002: Engine
+    400004: pCube1
+    400006: Wing
+    2100000: black
+    2100002: lambert5
+    2100004: fins
+    2100006: red
+    2100008: lambert1
+    2300000: Engine
+    2300002: pCube1
+    2300004: Wing
+    3300000: Engine
+    3300002: pCube1
+    3300004: Wing
+    4300000: Engine
+    4300002: Wing
+    4300004: pCube1
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
