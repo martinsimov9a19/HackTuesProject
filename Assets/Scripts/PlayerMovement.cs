@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
+
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -9,14 +11,17 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     private Vector3 moveDirection = Vector3.zero;
+    CharacterController controller;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        CharacterController controller = GetComponent<CharacterController>();
+
         if (controller.isGrounded) {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
@@ -26,15 +31,21 @@ public class PlayerMovement : MonoBehaviour {
             
         }
         moveDirection.y -= gravity * Time.deltaTime;
-        controller.Move(moveDirection * Time.deltaTime);
+        if (controller.enabled == true)
+        {
+            controller.Move(moveDirection * Time.deltaTime);
+        }
 
     }
-    void OnTriggerEnter(Collider col)
+
+
+    void OnCollisionEnter(Collision collision)
     {
-        if (col.gameObject.tag == "LillyPad")
+        if (collision.gameObject.tag == "LillyPad")
         {
-            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY| RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+            controller.enabled = false;
+            rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
+
         }
     }
-
 }
