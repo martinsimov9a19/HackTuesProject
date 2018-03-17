@@ -15,14 +15,23 @@ public class PlayerMovement : MonoBehaviour {
 
     public Canvas GUICanvas;
 
-    public Text text;
+    public Text question;
+
+
+    int randomIndexAnswer;
 
     string[] Questions = { "haha", "ha", "lel", "lul", "lel", "pls" };
+    string[,] Answers = { { "1", "2", "3", "4" }, { "1", "2", "3", "4" }, { "1", "2", "3", "4" }, { "1", "2", "3", "4" }, { "1", "2", "3", "4" }, { "1", "2", "3", "4" } };
     string[] UnanswerdQuestions = { };
+    List<int> Used;
+    public Button[] buttons;
+    public Text[] texts;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
+        Used = new List<int>();
     }
 
     void Update()
@@ -53,8 +62,31 @@ public class PlayerMovement : MonoBehaviour {
             controller.enabled = false;
             rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
             GUICanvas.enabled = true;
-            int randomIndex = Random.Range(0, 5);
-            text.text = Questions[randomIndex];
+            int randomIndex = Random.Range(0, 7);
+            question.text = Questions[randomIndex];
+            Used.Clear();
+
+            for (int i = 0; i < 4; i++)
+            {
+                randomIndexAnswer = Random.Range(0, 4);
+
+                while(Used.Contains(randomIndexAnswer))
+                {
+                    randomIndexAnswer = Random.Range(0, 4);
+                }
+
+
+                Used.Add(randomIndexAnswer);
+
+                randomIndexAnswer.ToString();
+                texts[i].text = Answers[i, randomIndexAnswer];
+
+                Button ButtonAnswer = buttons[i].GetComponent<Button>();  
+            }
+
+
+
+
             
         }
     }

@@ -2073,7 +2073,17 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   GUICanvas: {fileID: 1014756651}
-  text: {fileID: 1676485059}
+  question: {fileID: 1676485059}
+  buttons:
+  - {fileID: 484953787}
+  - {fileID: 1948764739}
+  - {fileID: 1175075411}
+  - {fileID: 937290522}
+  texts:
+  - {fileID: 195601713}
+  - {fileID: 754606575}
+  - {fileID: 633031037}
+  - {fileID: 1909684518}
 --- !u!54 &1900725533
 Rigidbody:
   m_ObjectHideFlags: 0
