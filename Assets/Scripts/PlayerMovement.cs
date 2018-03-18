@@ -19,11 +19,11 @@ public class PlayerMovement : MonoBehaviour {
 
 
 
-
+     
     int randomIndexAnswer;
 
-    string[] Questions = { "haha", "ha", "lel", "lul", "lel", "pls" };
-    string[,] Answers = { { "1", "2", "3", "4" }, { "1", "2", "3", "4" }, { "1", "2", "3", "4" }, { "1", "2", "3", "4" }, { "1", "2", "3", "4" }, { "1", "2", "3", "4" } };
+    string[] Questions = { "Къде е открит барутът?", "През кой век са изобретени ядрените оръжия?", "През коя година Христофор Колумб открива Америка?", "Кой е първият западен изследовател достигнал Китай?", "През коя година е основана България?", "От кого е ушито Самарското знаме?", "Как умира Цар Борис III? ", "На кои двама братя се дължи въстанието, което основава Второто българско царство?", "През коя година е прието Христианството в Първото българско царство (Покръстването)?","Кой е първият император на Свещената Римска империя?", "Кой Римски император е убит от конспирация между сенатори?" };
+    string[,] Answers = { { "а) Китай", "б) Русия", "в) Франция", "г) Япония" }, { "а) XX", "б) XVIII", "в) XIX", "г) XVII"}, { "а) 1492", "б) 1493", "в) 1396", "г) 1453" }, { "а) Фернандо Магелан", "б) Марко Поло", "в) Христофор Колумб", "г) Ернан Кортес" }, { "а) 681", "б) 675", "в) 668", "г) 669" }, { "a) Никола Корчев", "б) Павел Калитин", "в) Райна Княгиня", "г) Цеко Петков" },{ "a) Отровен е", "б) Самоубива се", "в) От сърдечен удар", "г) Екзекутиран е" },{ "а) Асен и Петър", "б) Крум и Омуртаг", "в) Самуил и Омуртаг", "г) Калоян и Аспарух" },{"а) 864", "б)1014", "в)866", "г)875" },{ "a) Карл Велики", "б) Лудвиг Благочестиви", "в) Ото I", "г) Хенри 4" },{ "a) Юлий Цезар", "б) Нерон", "в) Тиберий", "г) Октавиан Август" } };
     string[] UnanswerdQuestions = { };
     List<int> Used;
     public Button[] buttons;
@@ -75,10 +75,17 @@ public class PlayerMovement : MonoBehaviour {
         }
         if (collision.gameObject.tag == "LillyPad")
         {
+
+
+            for (int i = 0; i < 4; i++)
+            {
+                buttons[i].onClick.RemoveAllListeners();
+            }
+
             controller.enabled = false;
             rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
             GUICanvas.enabled = true;
-            int randomIndex = Random.Range(0, 6);
+            int randomIndex = Random.Range(0, 12);
             question.text = Questions[randomIndex];
             Used.Clear();
 
@@ -103,23 +110,37 @@ public class PlayerMovement : MonoBehaviour {
                 Used.Add(randomIndexAnswer);
 
                 randomIndexAnswer.ToString();
-                texts[i].text = Answers[i, randomIndexAnswer];
+                texts[i].text = Answers[randomIndex, randomIndexAnswer];
                 if (randomIndexAnswer != 0)
                 {
                     Button button = buttons[i].GetComponent<Button>();
                     button.onClick.AddListener(TaskOnClickWrong);
                 }
+
             }
         }
     }
 
-    int i = 1;
+  
 
     void TaskOnClickWrong()
     {
-        Debug.Log("Wrong!");
+        if(i==1)
+        {
+            transform.position = Lilypads[i].position;
+        }
+        if (i > 1)
+        {
+            i--;
+            transform.position = Lilypads[i].position;
+            GUICanvas.enabled = true;
+            controller.enabled = false;
+            rb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
+
+        }
     }
 
+    int i = 1;
     void TaskOnClickCorrect()
     {
         Debug.Log("Correct!");
@@ -128,8 +149,8 @@ public class PlayerMovement : MonoBehaviour {
         GUICanvas.enabled = false;
         controller.enabled = true;
         transform.position = Lilypads[i].position;
-
-        if (i < 9)
+        
+        if (i < 11)
         {
             i++;
         }
